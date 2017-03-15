@@ -55,6 +55,7 @@ namespace LeetCode_121_BestTimeBuyAndSellStock
             AssertMaxProfitShouldBe(prices, 6);
         }
 
+        [TestCategory("from leetcode")]
         [TestMethod]
         public void price_is_empty_maxProfit_should_be_0()
         {
@@ -67,6 +68,11 @@ namespace LeetCode_121_BestTimeBuyAndSellStock
     {
         public int MaxProfit(int[] prices)
         {
+            if (prices.Length < 2)
+            {
+                return 0;
+            }
+
             return FindMaxProfitFromNextPrice(prices[0], prices.Skip(1), 0);
         }
 
