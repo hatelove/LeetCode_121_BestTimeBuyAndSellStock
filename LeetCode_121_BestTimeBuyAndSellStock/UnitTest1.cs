@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace LeetCode_121_BestTimeBuyAndSellStock
 {
@@ -42,7 +43,9 @@ namespace LeetCode_121_BestTimeBuyAndSellStock
             }
             else
             {
-                return prices[1] - prices[0];
+                var remainPrices = prices.Skip(1);
+                var max = remainPrices.Max();
+                return max - prices[0];
             }
         }
     }
