@@ -62,6 +62,13 @@ namespace LeetCode_121_BestTimeBuyAndSellStock
             var prices = new int[] { };
             AssertMaxProfitShouldBe(prices, 0);
         }
+
+        [TestMethod]
+        public void prices_is_2_1_2_0_1_maxProfit_should_be_1()
+        {
+            var prices = new int[] { 2, 1, 2, 0, 1 };
+            AssertMaxProfitShouldBe(prices, 1);
+        }
     }
 
     public class Solution
@@ -86,6 +93,7 @@ namespace LeetCode_121_BestTimeBuyAndSellStock
             var max = remainPrices.Max();
             var currentMaxProfit = max - flag;
             var maxProfit = Math.Max(lastMaxProfit, currentMaxProfit);
+
             return FindMaxProfitFromNextPrice(remainPrices.ElementAt(0), remainPrices.Skip(1), maxProfit);
         }
     }
