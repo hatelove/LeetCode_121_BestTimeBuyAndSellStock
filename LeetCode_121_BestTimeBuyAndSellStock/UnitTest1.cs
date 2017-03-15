@@ -18,6 +18,11 @@ namespace LeetCode_121_BestTimeBuyAndSellStock
     {
         public int MaxProfit(int[] prices)
         {
+            if (prices[1] <= prices[0])
+            {
+                return 0;
+            }
+
             throw new NotImplementedException();
         }
     }
