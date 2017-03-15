@@ -1,4 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace LeetCode_121_BestTimeBuyAndSellStock
@@ -58,21 +60,20 @@ namespace LeetCode_121_BestTimeBuyAndSellStock
     {
         public int MaxProfit(int[] prices)
         {
-            var remainPrices = prices.Skip(1);
-            var max = remainPrices.Max();
+            return FindMaxProfitFromNextPrice(prices[0], prices.Skip(1), 0);
+        }
 
-            if (prices[1] <= prices[0])
+        private int FindMaxProfitFromNextPrice(int flag, IEnumerable<int> remainPrices, int lastMaxProfit)
+        {
+            if (!remainPrices.Any())
             {
-                var flag = prices[1];
-                var result = max - flag;
-                return result;
+                return lastMaxProfit;
             }
-            else
-            {
-                var flag = prices[0];
-                var result = max - flag;
-                return result;
-            }
+
+            var max = remainPrices.Max();
+            var currentMaxProfit = max - flag;
+            var maxProfit = Math.Max(lastMaxProfit, currentMaxProfit);
+            return FindMaxProfitFromNextPrice(remainPrices.ElementAt(0), remainPrices.Skip(1), maxProfit);
         }
     }
 }
