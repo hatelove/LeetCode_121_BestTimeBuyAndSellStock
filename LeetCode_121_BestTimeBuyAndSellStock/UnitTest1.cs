@@ -17,6 +17,13 @@ namespace LeetCode_121_BestTimeBuyAndSellStock
         {
             Assert.AreEqual(expected, new Solution().MaxProfit(prices));
         }
+
+        [TestMethod]
+        public void prices_is_4_6_maxProfit_should_be_2()
+        {
+            var prices = new int[] { 4, 6 };
+            AssertMaxProfitShouldBe(prices, 2);
+        }
     }
 
     public class Solution
