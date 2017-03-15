@@ -10,7 +10,12 @@ namespace LeetCode_121_BestTimeBuyAndSellStock
         public void prices_is_5_4_maxProfit_should_be_0()
         {
             var prices = new int[] { 5, 4 };
-            Assert.AreEqual(0, new Solution().MaxProfit(prices));
+            AssertMaxProfitShouldBe(prices, 0);
+        }
+
+        private static void AssertMaxProfitShouldBe(int[] prices, int expected)
+        {
+            Assert.AreEqual(expected, new Solution().MaxProfit(prices));
         }
     }
 
