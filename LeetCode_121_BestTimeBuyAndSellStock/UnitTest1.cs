@@ -1,5 +1,5 @@
-﻿using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Linq;
 
 namespace LeetCode_121_BestTimeBuyAndSellStock
 {
@@ -37,6 +37,13 @@ namespace LeetCode_121_BestTimeBuyAndSellStock
         {
             var prices = new int[] { 4, 7, 6 };
             AssertMaxProfitShouldBe(prices, 3);
+        }
+
+        [TestMethod]
+        public void price_is_4_7_6_9_3_maxProfit_should_be_5()
+        {
+            var prices = new int[] { 4, 7, 6, 9, 3 };
+            AssertMaxProfitShouldBe(prices, 5);
         }
     }
 
