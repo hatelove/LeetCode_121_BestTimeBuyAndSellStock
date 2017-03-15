@@ -58,19 +58,20 @@ namespace LeetCode_121_BestTimeBuyAndSellStock
     {
         public int MaxProfit(int[] prices)
         {
+            var remainPrices = prices.Skip(1);
+            var max = remainPrices.Max();
+
             if (prices[1] <= prices[0])
             {
-                var remainPrices = prices.Skip(1).ToArray();
                 var flag = prices[1];
-                var max = remainPrices.Max();
                 var result = max - flag;
                 return result;
             }
             else
             {
-                var remainPrices = prices.Skip(1);
-                var max = remainPrices.Max();
-                return max - prices[0];
+                var flag = prices[0];
+                var result = max - flag;
+                return result;
             }
         }
     }
