@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace LeetCode_121_BestTimeBuyAndSellStock
 {
@@ -34,8 +33,10 @@ namespace LeetCode_121_BestTimeBuyAndSellStock
             {
                 return 0;
             }
-
-            throw new NotImplementedException();
+            else
+            {
+                return prices[1] - prices[0];
+            }
         }
     }
 }
