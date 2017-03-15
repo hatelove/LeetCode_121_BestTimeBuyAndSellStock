@@ -54,6 +54,13 @@ namespace LeetCode_121_BestTimeBuyAndSellStock
             var prices = new int[] { 4, 1, 7 };
             AssertMaxProfitShouldBe(prices, 6);
         }
+
+        [TestMethod]
+        public void price_is_empty_maxProfit_should_be_0()
+        {
+            var prices = new int[] { };
+            AssertMaxProfitShouldBe(prices, 0);
+        }
     }
 
     public class Solution
